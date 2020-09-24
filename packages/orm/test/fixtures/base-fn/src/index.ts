@@ -1,7 +1,7 @@
 import { FunctionHandler, FaaSContext } from '@midwayjs/faas';
 import { Provide, Inject, Func } from '@midwayjs/decorator';
 import { getRepository, InjectEntityModel, useEntityModel } from '../../../../src';
-import { User } from './model/user';
+import { User } from './entity/user';
 import { Repository } from 'typeorm';
 import * as assert  from 'assert';
 

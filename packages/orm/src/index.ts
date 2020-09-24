@@ -12,8 +12,8 @@ import {
 import { saveModule, attachClassMetadata } from '@midwayjs/core';
 
 export const CONNECTION_KEY = 'orm:getConnection'
-export const ENTITY_MODEL_KEY = 'entity_model_key';
-export const EVENT_SUBSCRIBER_KEY = 'event_subscriber_key';
+export const ENTITY_MODEL_KEY = 'orm:entity_model_key';
+export const EVENT_SUBSCRIBER_KEY = 'orm:event_subscriber_key';
 /**
  * Entity - typeorm
  * @param options EntityOptions

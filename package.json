@@ -3,17 +3,13 @@
   "description": "Component for Midway Service",
   "version": "1.0.0",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/lodash": "^4.14.159",
-    "@types/mocha": "^7.0.2",
+    "@types/jest": "^26.0.10",
     "@types/node": "^10.12.18",
     "lerna": "3",
-    "midway-bin": "2",
     "mwts": "^1.0.5",
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "autod": "lerna run autod",
     "test": "lerna run test",
     "cov": "lerna run cov --concurrency=1",
     "ci": "npm run build && npm run cov",
@@ -38,41 +34,16 @@
     "k8s",
     "cloud native"
   ],
-  "homepage": "http://github.com/midwayjs/midway",
+  "homepage": "http://github.com/midwayjs/midway-component",
   "repository": {
     "type": "git",
-    "url": "http://github.com/midwayjs/midway.git"
+    "url": "http://github.com/midwayjs/midway-component.git"
   },
   "engines": {
     "node": ">= 10"
   },
   "license": "MIT",
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/midway-faas"
-  },
-  "nyc": {
-    "include": [
-      "packages/**/src/*.ts",
-      "packages/**/src/**/*.ts"
-    ],
-    "exclude": [
-      "**/typings",
-      "**/*.d.ts",
-      "**/dist",
-      "**/test",
-      "**/src/domain.ts",
-      "**/src/interface.ts"
-    ],
-    "extension": [
-      ".ts",
-      ".js"
-    ],
-    "reporter": [
-      "json",
-      "html"
-    ],
-    "all": true
-  },
-  "dependencies": {}
+  "dependencies": {
+    "ts-node": "^9.0.0"
+  }
 }
