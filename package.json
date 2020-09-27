@@ -1,5 +1,5 @@
 {
-  "name": "midway-component",
+  "name": "@vastiny/midway-component",
   "description": "Component for Midway Service",
   "version": "1.0.0",
   "devDependencies": {
@@ -41,7 +41,7 @@
   "homepage": "http://github.com/midwayjs/midway",
   "repository": {
     "type": "git",
-    "url": "http://github.com/midwayjs/midway.git"
+    "url": "git+ssh://git@github.com/midwayjs/midway.git"
   },
   "engines": {
     "node": ">= 10"
@@ -74,5 +74,8 @@
     ],
     "all": true
   },
-  "dependencies": {}
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/midwayjs/midway/issues"
+  }
 }
