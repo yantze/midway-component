@@ -1,6 +1,6 @@
 import { ILifeCycle, IMidwayContainer } from '@midwayjs/core';
 import { Configuration, listModule, Config } from '@midwayjs/decorator';
-import { createConnection, getConnection, getRepository } from 'typeorm';
+import { createConnection, getConnection, getRepository, getConnectionManager } from 'typeorm';
 import { ENTITY_MODEL_KEY, EVENT_SUBSCRIBER_KEY, CONNECTION_KEY } from '.';
 
 @Configuration({
@@ -30,7 +30,16 @@ export class OrmConfiguration implements ILifeCycle {
     for (const connectionOption of opts) {
       connectionOption.entities = entities || [];
       connectionOption.subscribers = eventSubs || [];
-      this.connectionNames.push(connectionOption.name || 'default');
+      const connectionName = connectionOption.name || 'default'
+      this.connectionNames.push(connectionName);
+
+      if (getConnectionManager().connections.some(conn => conn.name === connectionName)) {
+        const conn = getConnection(connectionName);
+        if (conn) {
+          await conn.close();
+        }
+      }
+
       await createConnection(connectionOption);
     }
 
